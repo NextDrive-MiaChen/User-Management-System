@@ -7,5 +7,27 @@
   },
   "scripts": {
     "watch": "nodemon app"
-  }
+  },
+  "name": "user-system",
+  "description": "It's a user management system.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NextDrive-MiaChen/UserSystem.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "author": "MiaChen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NextDrive-MiaChen/UserSystem/issues"
+  },
+  "homepage": "https://github.com/NextDrive-MiaChen/UserSystem#readme"
 }
