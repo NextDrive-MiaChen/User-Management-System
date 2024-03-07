@@ -4,8 +4,7 @@
     "express": "4.18.3",
     "nodemon": "3.1.0",
     "pg": "8.11.3",
-    "pg-hstore": "2.3.4",
-    "sequelize": "6.37.1"
+    "pg-hstore": "2.3.4"
   },
   "scripts": {
     "watch": "nodemon server"
@@ -16,7 +15,7 @@
   "main": "server.js",
   "directories": {
     "test": "tests"
-  }, 
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NextDrive-MiaChen/UserSystem_v2.git"
