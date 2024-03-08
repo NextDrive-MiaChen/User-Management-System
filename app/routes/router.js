@@ -1,11 +1,9 @@
-const express = require('express');
+const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const router = express.Router();
 const pool = require('../config/db');
 const authJwt = require('../middleware/jwt');
 const { authenticateUser } = require('../middleware/auth');
-
 
 // Create user
 router.post('/users', authJwt.verifyToken, async (req, res) => {
@@ -63,9 +61,7 @@ router.delete('/users/:id', authJwt.verifyToken, async (req, res) => {
     } catch (error) {
         console.error('Error fetching users:', error);
         res.status(500).json({ error: 'An error occurred while fetching users.' });
-    }
-    
-    
+    }   
 });
 
 // Sign up
