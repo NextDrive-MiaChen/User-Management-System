@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NextDrive-MiaChen/UserSystem_v2.git"
+    "url": "git+https://github.com/NextDrive-MiaChen/UserSystem.git"
   },
   "keywords": [
     "nodejs",
@@ -32,9 +32,9 @@
   "author": "MiaChen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NextDrive-MiaChen/UserSystem_v2/issues"
+    "url": "https://github.com/NextDrive-MiaChen/UserSystem/issues"
   },
-  "homepage": "https://github.com/NextDrive-MiaChen/UserSystem_v2#readme",
+  "homepage": "https://github.com/NextDrive-MiaChen/UserSystem#readme",
   "devDependencies": {
     "jest": "^29.7.0",
     "supertest": "^6.3.4"
