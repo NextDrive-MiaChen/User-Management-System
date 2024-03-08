@@ -22,7 +22,7 @@ const verifyToken = (req, res, next) => {
         const user = result.rows[0];
         if (!user) {
           return res.status(401).send({
-            message: "User not found or not authenticated!"
+            message: "User not found!"
           });
         }
       req.user = user;
