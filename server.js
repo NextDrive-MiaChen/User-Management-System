@@ -4,7 +4,6 @@ const router = require('./app/routes/router');
 
 require('dotenv').config();
 
-// Middleware
 app.use(express.json());
 app.use(router);
 
