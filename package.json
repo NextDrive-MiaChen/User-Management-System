@@ -12,8 +12,8 @@
     "watch": "nodemon server",
     "start": "node server.js",
     "test": "jest --watchAll --no-cache --detectOpenHandles"
-  }, 
-  "name": "usersystem_v2",
+  },
+  "name": "usersystem",
   "description": "It's a user management system.",
   "version": "1.0.0",
   "main": "server.js",
