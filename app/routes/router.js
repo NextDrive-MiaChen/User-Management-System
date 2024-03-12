@@ -2,8 +2,8 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const pool = require('../config/db');
-const authJwt = require('../middleware/jwt');
-const { authenticateUser } = require('../middleware/auth');
+const authJwt = require('../middleware/auth');
+const authenticateUser = require('../middleware/auth');
 
 // Create user
 router.post('/users', authJwt.verifyToken, async (req, res) => {
