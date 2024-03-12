@@ -11,8 +11,8 @@
   "scripts": {
     "watch": "nodemon server",
     "start": "node server.js",
-    "test": "jest"
-  },
+    "test": "jest --watchAll --no-cache --detectOpenHandles"
+  }, 
   "name": "usersystem_v2",
   "description": "It's a user management system.",
   "version": "1.0.0",
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/NextDrive-MiaChen/UserSystem#readme",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "supertest": "^6.3.4"
+    "jest": "29.7.0",
+    "supertest": "6.3.4"
   }
 }
