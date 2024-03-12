@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const pool = require('../config/db');
 const authJwt = require('../middleware/auth');
-const authenticateUser = require('../middleware/auth');
+const { authenticateUser } = require('../middleware/auth');
 
 // Create user
 router.post('/users', authJwt.verifyToken, async (req, res) => {
@@ -13,7 +13,7 @@ router.post('/users', authJwt.verifyToken, async (req, res) => {
         const newUser = result.rows[0];
         res.status(201).json({ id: newUser.id });
     } catch (error) {
-        console.error('Error creating user:', error);
+        console.error('Error creating user:', error.message);
         res.status(500).json({ error: 'An error occurred while creating the user.' });
     }
 }); 
@@ -43,7 +43,7 @@ router.get('/users', authJwt.verifyToken, async (req, res) => {
         const users = result.rows;
         res.json(users);
     } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error('Error fetching users:', error.message);
         res.status(500).json({ error: 'An error occurred while fetching users.' });
     }
 });
