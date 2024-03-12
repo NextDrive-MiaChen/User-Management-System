@@ -8,6 +8,7 @@ const authJwt = require('../middleware/auth');
 const app = express();
 app.use(bodyParser.json());
 
+// Mock the authJwt.verifyToken middleware
 jest.mock('../middleware/auth', () => ({
     verifyToken: jest.fn().mockImplementation((req, res, next) => {
 
@@ -16,6 +17,7 @@ jest.mock('../middleware/auth', () => ({
     }),
 }));
 
+// Mock the database query method 
 const mockQuery = jest.fn();
 
 beforeEach(() => {
@@ -57,6 +59,6 @@ describe('POST /users', () => {
 
         expect(response.status).toBe(500);
         expect(response.body).toEqual({ error: 'An error occurred while creating the user.' });
-        expect(authJwt.verifyToken).toHaveBeenCalled();
+        expect(authJwt.verifyToken).toHaveBeenCalled(); 
     });
 });
