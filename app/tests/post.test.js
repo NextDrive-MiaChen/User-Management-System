@@ -11,31 +11,32 @@ app.use(bodyParser.json());
 // Mock the authJwt.verifyToken middleware
 jest.mock('../middleware/auth', () => ({
     verifyToken: jest.fn().mockImplementation((req, res, next) => {
-
         req.user = { userId: 123 };
         next(); 
     }),
 }));
 
-// Mock the database query method 
-const mockQuery = jest.fn();
-
+// Disable console.error output during tests
 beforeEach(() => {
-    pool.query = mockQuery;
+    jest.spyOn(console, 'error').mockImplementation(() => {});
 });
+
+afterEach(() => {
+    jest.restoreAllMocks(); 
+});
+
+const mockQuery = jest.fn();
 
 app.use('/', router);
 
 describe('POST /users', () => {
-    afterEach(() => {
-        jest.clearAllMocks(); 
-    });
-
     it('should create a new user', async () => {
         const newUser = { name: 'Test User', nickname: 'testuser', age: 25 };
         const userId = 123;
 
         mockQuery.mockResolvedValue({ rows: [{ id: userId }] });
+
+        pool.query = mockQuery;
 
         const response = await request(app)
             .post('/users')

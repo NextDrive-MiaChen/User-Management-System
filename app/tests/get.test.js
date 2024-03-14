@@ -11,11 +11,18 @@ app.use(bodyParser.json());
 // Mock the authJwt.verifyToken middleware
 jest.mock('../middleware/auth', () => ({
     verifyToken: jest.fn().mockImplementation((req, res, next) => {
-
         req.user = { userId: 123 };
         next(); 
     }),
 }));
+
+beforeEach(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+});
+
+afterEach(() => {
+    jest.restoreAllMocks();
+});
 
 // Mock the database query method
 const mockQuery = jest.fn();
