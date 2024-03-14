@@ -16,11 +16,6 @@ jest.mock('../middleware/auth', () => ({
     }),
 }));
 
-// Disable console.error output during tests
-beforeEach(() => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
-});
-
 afterEach(() => {
     jest.restoreAllMocks(); 
 });
